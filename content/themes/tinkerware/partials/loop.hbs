@@ -1,0 +1,12 @@
+{{! This is the post loop - each post will be output using this markup }}
+
+{{#foreach posts}}
+ <article class="entry">
+  <h2><a href="{{url}}">{{title}}</a></h2>
+  <img src="{{image}}" alt="{{title}}"/>
+  <p>{{excerpt words="39"}}</p>
+  <a href="{{url}}" class="small radius button">Read More</a>
+  <div class="meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time>, Written by <a href="#">{{author}}</a> <i class="fa fa-comment-o"></i><a href="{{url}}#disqus_thread">Comments</a></div>
+ </article>
+ <div class="spacing-top-50"></div>
+{{/foreach}}

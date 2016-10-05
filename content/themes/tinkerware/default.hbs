@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+ {{! Document Settings }}
+ <meta charset="utf-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ 
+ {{! Page Meta }}
+ <title>{{meta_title}}</title>
+ <meta name="description" content="{{meta_description}}" />
+ 
+ <meta name="HandheldFriendly" content="True" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+ <link rel="shortcut icon" href="{{asset "images/favicon.ico"}}">
+ 
+ {{! CSS START }}
+ <link href="{{asset "css/foundation.css"}}" rel="stylesheet">
+ <link href="{{asset "css/font-awesome.min.css"}}" rel="stylesheet">
+ <link href="{{asset "css/animate.min.css"}}" rel="stylesheet">
+ <link href="{{asset "css/morphext.css"}}" rel="stylesheet">
+ <link href="{{asset "css/slicknav.css"}}" rel="stylesheet">
+ <link href="{{asset "css/style.css"}}" rel="stylesheet">
+ <script src="{{asset "js/jquery.js"}}"></script>
+ 
+ {{! CSS END }}
+ <!--[if lt IE 9]>
+ <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+ <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+ <![endif]-->
+ {{! Ghost outputs important style and meta data with this tag }}
+ {{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+ 
+ {{! HEADER START }}
+ {{> "header" }}
+ {{! HEADER END }}
+ 
+ <!-- BLOG CONTENT -->
+ <section class="sectionarea blog">
+  <div class="row">
+   <div class="small-12 large-9 medium-9 columns">
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+   </div>
+   <div class="small-12 large-3 medium-3 columns">
+    {{> "sidebar" }}
+   </div>
+  </div>
+ </section>
+ <!-- END OF CONTENT -->
+ 
+ {{! FOOTER START }}
+ {{> "footer" }}
+ {{! FOOTER END }}
+ 
+ 
+ {{! JAVASCRIPT START }}
+ <script src="{{asset "js/vendor/jquery.js"}}"></script>
+ <script src="{{asset "js/vendor/what-input.min.js"}}"></script>
+ <script src="{{asset "js/foundation.min.js"}}"></script>
+ <script src="{{asset "js/vendor/superfish.min.js"}}"></script>
+ <script src="{{asset "js/vendor/morphext.min.js"}}"></script>
+ <script src="{{asset "js/vendor/wow.min.js"}}"></script> 
+ <script src="{{asset "js/vendor/jquery.slicknav.min.js"}}"></script>
+ <script src="{{asset "js/custom.js"}}"></script>
+ {{! JAVASCRIPT END }}
+ 
+ {{! Ghost outputs important scripts and data with this tag }}
+ {{ghost_foot}}
+ <script id="dsq-count-scr" src="//tinkerware-blog.disqus.com/count.js" async></script>
+ <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false">
+ </script>
+ <script>
+  function showMailingPopUp() {
+   document.cookie = 'MCEvilPopupClosed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+   require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us1.list-manage.com","uuid":"fe0e0cc24c696636fbf9cda85","lid":"689347539a"}) })
+  };
+ </script>
+</body>
+</html>
